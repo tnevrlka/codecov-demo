@@ -10,7 +10,11 @@ comment:
 
 component_management:
   individual_components:
-    - component_id: api
-      name: api
+    - component_id: api-calculator
+      name: calculator
       paths:
-        - api
+        - api/calculator/
+    - component_id: api-smiles
+      name: smiles
+      paths:
+        - api/smiles/
