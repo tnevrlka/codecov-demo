@@ -4,3 +4,17 @@ coverage:
       default:
         target: 100%
         threshold: 1%
+
+comment:
+  layout: "header, diff, flags, components"
+
+component_management:
+  individual_components:
+    - component_id: api-calculator
+      name: calculator
+      paths:
+        - api/calculator/
+    - component_id: api-smiles
+      name: smiles
+      paths:
+        - api/smiles/
