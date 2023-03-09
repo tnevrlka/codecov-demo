@@ -1,7 +1,7 @@
 version: 2.1
 
 orbs:
-  codecov: codecov/codecov@3.2.2
+  codecov: codecov/codecov@3.2.3
 
 jobs:
   test-api:
@@ -15,11 +15,23 @@ jobs:
       - run:
           name: Run tests and collect coverage
           command: pytest --cov api/
-      - codecov/upload
+      - codecov/upload:
+          flags: backend
+  test-frontend:
+    docker:
+      - image: cimg/node:17.6.0
+    steps:
+      - checkout
+      - run:
+        name: install requirements
+        command: cd web && npm install
+      - codecov/upload:
+          flags: frontend
 
 workflows:
   version: 2.1
   build-test:
     jobs:
       - test-api
+      - test-frontend
 
