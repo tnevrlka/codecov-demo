@@ -1,20 +1,21 @@
 coverage:
   status:
-    project:
-      default:
-        target: 100%
-        threshold: 1%
+    project: off
+    patch: off
 
-comment:
-  layout: "header, diff, flags, components"
-
-component_management:
-  individual_components:
-    - component_id: api-calculator
-      name: calculator
+flag_management:
+  individual_flags:
+    - name: backend
       paths:
-        - api/calculator/
-    - component_id: api-smiles
-      name: smiles
+        - api/
+      statuses:
+        - type: project
+          target: 100%
+          threshold: 1%
+    - name: frontend
       paths:
-        - api/smiles/
+        - web/
+      statuses:
+        - type: project
+          target: auto
+          threshold: 1%
