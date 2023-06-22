@@ -1,0 +1,15 @@
+comment: off
+
+codecov:
+  require_ci_to_pass: no
+  notify:
+    wait_for_ci: no
+
+coverage:
+  status:
+    project:
+      default:
+        target: auto
+        threshold: 1%
+        removed_code_behavior: adjust_base
+        if_ci_failed: success
